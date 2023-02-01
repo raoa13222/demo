@@ -1,8 +1,540 @@
 <!DOCTYPE html>
-<html>
-    <body>
-        <title>
-            Testing 1
-        </title>
-    </body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500&display=swap"
+      rel="stylesheet"
+    />
+    <title>Bootstrap Landing Page</title>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item1 active">
+              <a class="nav-link1" href="#"
+                >Home <span class="sr-only"></span
+              ></a>
+            </li>
+            <li class="nav-item2">
+              <a class="nav-link2" href="#">Features</a>
+            </li>
+            <li class="nav-item3">
+              <a class="nav-link3" href="#">Pricing</a>
+            </li>
+            <li class="nav-item4">
+              <a class="nav-link4" href="#">About</a>
+            </li>
+            <li class="nav-item5">
+              <a class="nav-link5" href="#">Contact Us</a>
+            </li>
+          </ul>
+          <form class="form-inline">
+            <input
+              class="form-control search"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+      <div class="row">
+        <div
+          id="carouselExampleCaptions"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#carouselExampleCaptions"
+              data-bs-slide-to="0"
+              class=""
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleCaptions"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+              class=""
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleCaptions"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+              class="active"
+              aria-current="true"
+            ></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item">
+              <img
+                src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBUUFBgUFBQZGBgYGBgYGhgbGBgaGRgYGRgZGRkYGBobIC0kGx0pIBgYJTclLC4wNDQ0GiM5PzkyPi0yNDABCwsLEA8QHRISHjIpJCkyMjIyODIyMjQyMjIyMjIyMjIyMjIyMjUyMjIyMjAyMjIyMjIyMjIyMjIyMjIyMjIyMv/AABEIALsBDgMBIgACEQEDEQH/xAAbAAACAwEBAQAAAAAAAAAAAAACAwABBAUGB//EAEEQAAIBAgQCCAIHBQcFAQAAAAECAAMRBBIhMUFRBQYTIjJhcZGBoRRCUrHB0fAjYnKS4TNTgpOy0vEVFlSiwoT/xAAaAQADAQEBAQAAAAAAAAAAAAABAgMABAUG/8QALREAAgIBAwMDAwMFAQAAAAAAAAECEQMSITEEE0EiYZEFUXEUMoEzQsHh8CP/2gAMAwEAAhEDEQA/APPHo1DsLTBiejss9arUH50m5jvp7eJfnMvSdA01zHI6E2DowIvwBG4OnGexPS+Bui6jqFJRy8+5456doBWa8S+szmRPoorYXll2hhYQSah1EWBCyxlpLQ6R1jAyyZYzLKtDQe2AVg5Y2AYrA4gWlGERGPhyEV91a4uODDdW5G1jbkYGIzOZREIyjFEaG4jDZAGBzI3hYaajdWH1WGlx8RcEGZjNWHxBS4IDI2jIdmA29CODbj3EmJw4AzocyE2BPiU/YcDZvPY2uOIAIvbYxkwbRhg2mA0Np1VIy1Nh4W3K+Xmn7vDccQU4iiUNj6gjUMDsyniJRjqdbTI4uvzUn6yfiNj7EI0SaMREEiaq9HLbUFT4WGzD8DzG4mcxSbQBlS5DAI0VKlyQilSoUowGKkkkgASVLkmMevSoYNWrE2PM/wAr/lEtfkfYzt0M9D0Xbv4Ac3lBZC9t7+xhrbe4hqjqxyjLZMESwIQEsCYukVlkEO0gENDqIIEhSbKNEOpC+MXNvtrxA/eGptxF+I1zEQGSTCw+HzkqD3rd1ftn7IP2jw57bkXzRpE1svbAsP7Uakf3gG7D98cR9bfe9wyclT34OYRHYavkuCMytoyHZhw14MODcPcESJQEVxEcExmKwuUB0OZG8LcQeKMODD57jSY2E3YeuUuCMytoynZhw9GHA8PS4IYugFAZTmRvC3EHirDgw5fEaROCbVbMxGMoVih0sQRZgdVYcmHL5jcWMAwDAyUkaa9EEdpTvl4g6shOwbmOTcfI6TIY2lVKG6ny5gg7gg7g8o2pRDjPTGn1k3KeYP1k89xseBIJsxkwDNP0ZuJC+plFaY3Yt6C33wMRoXSq5bqRmU7rt8QeDef3jSSphzoV7ynY22P2WHA/oQjiFHhQep1lLjHvvcbFeBHI2+/cRGSdAHDEeIhfU6xbqgGhJPpYRlakLZ0uV4g7qeTcxyPHyOkzQCWgZJJJhSSpZkmFZRlS5UwCSSpJjHq0rHnHLUvvrOV3uXsYaYgj8jpPScE+Dsxde+JxOjUwwbbSc+rhmQ32vx58PjNFPFDjpOgjKw11ER2uTocMeX1Qe/scZKnPTz4f0jgJqxGBvqvt+XOc8Ky7fyn8OU23gaGaeN1kVr7mkCVaDTqg+RG4PD+nnGQnfiyQn+12RWIIIJBGoI3BGxB5zXXQOpqKO8Ldoo0sTYZ1H2STqOBPIi2SMoVSjBl3HMXBBFiCOIIJBHEGK0NKHlciSJAxBuCQQbgjQgjYg8DNOJpLYPT8BNrblG3yE8eaniPMNZK4dz9U/HT74LFtNDKwFQGoo74F3UC2YcXUf6hw3Gl8uIia1QoQ3aBSDcWuSD8I2qqMDURdrZ0HdC30zqPsE+xNtiLrdEuPwcwzRhWcEjIWRtGU6Bhw14MOB4elwYa5HhVV+Fz7mZ6tVjux9/wiSEmth2KweXvBhkN7E733KsBswv8AiNDMgybsWJ5D8zGUa+S4IzK1gy7A22IPBhfQ8PMEghiKGWzKcyNfK2226sODDiPQi4IMU5ZSrYFq6jwoPU6wfpb3BDWtta36MSYBgZOUjVUQOC6CzAXdOQG7LzXmNx6bYzDRypBBIINwRoQRxBmgqKuqgB9yg0Dc2QDY81+I5BCLdGImSXeS0wrZKdQqbj0PEEHcEcRDekGBZOHiX7PmOa/dx5xREtGKm6mxG0FCNijIY+u4Y5tbnccPUcvT9DOYBbJKlyjMBklSSpgEkklTAO+jxnaDY2+MX2B5j5/nrK+h33Y+gAUT1HCRCPWxXBKlSmvMfwg/8RS4tVN1Y+1j/WOXo9Bwv6kx64dBwX2EXtyNLrvOy/BVDpgcRfzAN/a02VKyOAcrXI5WPxvM2QQ0e2x+UPZKR+qtLTJpmOrRc/VAsdNfxHwj6VRvrDXy/IxrVTzgEE/8Rli+4mP6h25OUZE7SXnEip+rQuz9P18Zu0dMfrkly0x2ExvZnmp0YbZh5G2hG4PAxWJYZiBUzLwJuNDrqDseBHMHeA1E8vvi2Q8ovaQV9Yk5XSCEunUKkMu4+I1FiCDoQQSCOIMWychBIIivEdEfrEXtJfDNGIpAr2ieHZlvcoTw81PA/A66nCyzVh6xU3+B0upB3VhxBj8T0ewsyKSjba3sfskjfyPEeYIEZRcdmdEeqx5FszlFYyhUy3BGZW0Zdr22IPBhrY+fEEg7l6Oc8hCPRpG5JiUc+TPDizmYjD5bMDmRvC2226kcGHEfgQZlInaSlluMt1bxKeNtiOTDgfwJEytRtwi6WR7qOcU8jCCMNbWtx5H1ms0zPqPUjEBMJgkaq6CpiqyZVQMtUnNZHv4V43sduG8SfpVkp5aWx8qrDPYnRtcxGzeZHBufP1vcUwo9Z9BwvVii1TDCpTs1bG4ujVVHbKFpmplRNrAZRqADYRWH6Hw1OjRZ6FWs+IfFAFGbNSFB8ihaY0f7RzcAYNSJSzUjxDYW1u7uLjTh5RVWkRoRbjtafXumejKRwVKsylymFooqhrZQ2a1VrbrwHnvpMnSnQ9GtVepWyFaGAwjBXqNSQs5cXd0BZVAXhzEyyImszvc+RusQRPVdO9FUaeO7Gk2aialIDvEkK+TMuY2JsWYX3tad3F9VMKr4gBGtT6Qw2HXvvpSqdnnU66k5jruIJNIr3UfNpJ7zrZ0BhKeHrPh6TU3w+OOGJao1TtVyZs1joCCRoOA1vH9S+q+GxFKiMTTAbEtXWnUNd1qEUkJJo0lXKQpXUufTgCmrazdxVZ87lqhOwJ46C+nEz6L1c6t4OrSwCVKLNUxtLFE1BVZezagXKsqDRiRYWOmm286PVPo2hh6dErSJrYno/E1mrZ2sBYDs1p+G2o130g1ivIj5NJCA0EuOPZ6Iawgpndp9D07BmJYHkSB8CVsff+l08FQNtPL+0pjbnepv6T2Flizw8mPJFW6OGFMIL5Gd+v0ZRGyVPVdRfyu+swvhEB7qVB5NTbf/AANeMskSVZHHi/4ObNiBCLge8emCqG5Smz23CElgObIRmUeombtU2IdTyNr+xAlIzi+DjyY5+U0Q+Vosqx2vGBlvpcj0AP3maKmKZlyABV+yNBfmeLHzJMNklsc1ryo50P6ESyTMtCSKz+cJazDYn9esGUYu5eovwaUrg+Ow88oJ+Vvvhsinwsp+JU/+5t7TEYJis0cbv0ujTUwvHhzIsP5hoZo6LxhotlcZqbHvAEG37wsfl+M5gqWOjG/le/yialYDU6eth98hk01TO/BHIvc+qUuh1K5g65SAykakgi42sJwcSEmHq70xUdOyFyBcqQwG5F089SSOXe4DTbiMLUa/dAvxLD8Lmcq9N20GUZa6pnKxFRBwnPqV05R3SuHNMjtGUZr2yhm2tfcDmJyXdebH4AfiYHNHdjw0t7ND115ToYHrRiaNPs6VZkQEkKAuhbcg2uPeczBojOFZWync32004c7T1HRXV6nVVqgyKiMqlnzkF3NlUAA38zawGsnKa8lHBJbnJwPWfE0VKU67opfORoe9uWuwJ148+N47A9P4lKbU6dRwjliyqL6t4iDa6342InoML1YYmxNGke2bDgNcFqq2soyqdDwPl6X51fq1VqpSVFAq1MTWpZmr1DfJmLIUy5VC2PeBJIXaL3I/YlKKZk/6ziQAA7ACn2NiFA7L7BDCxHrrEr09ilqComICvkFIHMhui7IVAKsB5gxy9R6lQp2eIpVFqLVKOufK7UfGguoOfe3AgHWcjHdEdglCqzg9snaoo8QQNZWYHbNa4tfQTaovgWGJJ8g45atV2qVKhZ2N2YlixOmt7C2wtysJ0X6wY12Q1sQ1VEqUqhQ5QHNJgy3KrodLZt9r3sJ6XC9V6PbUUbELUFXBtiCAzCzZSVqKQg/ZaaX729xPNN1XxBqU0WtTZKlBsQK6swpiknjZgVDgg2FsuuYedpuSfJeOnyZutfTmIxhZqjnsw7OlG4Kpm08QVS5ANrkXtymDo7rRjMOgp0cQyIrFlUBTlJ1NiykgHiBoddIvp7o+phXVHdXV6aVUdS2V6b3ysA4DDYggi4InpMJ1KalX7OuaFZmw9WqKa13RkCKjK7FUJF8xAUixynWLaSGehI8vhun8TT7HJVZfo4qLR0XuLU8YFxre53vG4TrPjKVEUKeIZaShgEGWwDghluRcqcx0va+u4E7vRHVBewq1cS6Fj0dVxlKirOKigW7Kq9ly5Tr3c3EaHW3Ox/U6tSoNWZ0JSnTq1KIz9pTp1TZGJK5Sb7qGJW8FoS4nBSoo+r90s1xyma8l45Q+gPXKAvRpomIdg7szuKb5hfuqGCo7XByt3ddDfQe86i4c5qgqZO0XJdQR3GKligAAtoV9LjjcDwTEsxcLmN7nu3X4i1reXKdLoPpV8KwqKn2Ve9yyqvzyHMeZXKbad2elm6Z6XpPCw9fqWme3uet614HPUyk2Z7C5CgHhozHS2mw4eU81hHejVOStQIvcgtcNqO7dFAJJIFiD+M62OxQxxDI+mwckZBrpoCCNRz257zd1bwK0q4D5e0bk4YW0N1DElbj1JtvbQST0wp80aLya3zTOvgca7lEqYRwLXz5WyIbG5vUVWX4c55HrJh6NQXelmdspFQNZzfY23IbNcXPO209503UNOiwCu2ZSpsGYgHe5AJ2Nr+e+k+fVcmKdqmcoGcd42YhCu91FgAQFAHBvjJYHzLhex1STbST+Tgp0K4vkYNYXIa4IHC72sD5GN+g20ZWU+Y0P8JGjD0M9b1SoLnd3q5hTBYOTrkCkEam9soXU6aDSc3pXpo1+4h/ZI7MpIALNqNB9VQCbCdmPNOU9NbHmfUMOOENVtP8AycI4EcDMeJw4XcidWvUCqWOw++eaxGOdmJFh6WzepY7fC06XOjg6TFPJ6m6QTrxANudrD3Okz1Kyjdh6C7f6dPnFu+bViWO1ze/laAVH4+nAyMpyfB7eLHhjym/yLqY3gqsT8F+QzXmvH4GqiBrrcKGqLbvJfXTOSGFuI4gzGyD9fnzndfFUnw/Z993GgpvZmzHQMjKARbiNbiwJHHlnq8s9Lpu1vtW2x5F6rndiRyubewgCdZujW+sAn8ZCn+U975QPotIbuWPJBYfzNr/6ybiOrf8AsHoiuyMSp8Az/FWX7/wE9riOk/3jb/D+AnkMMAGKqoAKvck3bRGNr6aXA4cJuao2RRfZQOHIQaNty8OaNGMxyv4hmttmJNvQbTG+LA2UD0AmeoTEPeIdKSNL41p2+rnW44ZKlJ1qFHZXDUqnZurLuM1jdWFgePKeWYxbOOcV78izipKmexTrp/ZZqTE08acUf2hYsuXKKeZgWJAt3jvynTrdakoJhatNkqVFxOIxL0wWsiYgODTdios4FRl0B1F9t/nBqecEv5/OJSIyxRPf9HdY6Qq4OlQth6OGqvVzVql8xe5dWZF7q5SyDQ+IXnF66dLUq+KZqOtJESjSFiAKdNbCwOtrlj8Z5nOOcEuOYh2TsTQk7PbYTrrSQ0Khw7mpRwjYMkVFyMmUhHClbhrkk6wOjevPY/RgKTWo4WphXK1MrsrsrZ6bAd1lKKRvt8Z4osOcHMOcTTEzhE7PWfpgYuqHHaZVQIva1WqubXJZmbQEkk5VAA4TuN11X6a+K7FrNhTh8mYXBKBc+a22m08UWHMSiw5j3mpAcYntl65UuwCHDMa30BujzUFQBOyt3GCZb5r2J15/CdOdeTicN2ZWsKjU0ptbEMMPZPE4oqBdnGhDEgaW8/E5hzHvJmHMe8FIXREqSXJHHPeNijtub2AANvhrf4WjhjcpIsDYgE672Ja3MCxmd2bmiHyADAHhcC497zKzC1hqFB15lrC+v67s9+z5FYIvlDa+JF/BlJNzlZl12v3TvAXHsDcPUB5itUv8De8zVjr7xN4rr7HVDFJKk38s6v8A1mqd6tc//orf7pVDHFSSrVFJ3K1aik+pBF5zLwgZko/YE8c/DfyzqJVU62JJ0uWZjrvuZso4gTgq1pqpVZRUjhzYnLltjen8S1kX6mp+P6v7CcSmC5sis3kqlj8tZ2qyl0Kg2Yd5D+8NfwnOTpWoyZXdtNCtzYEaHSceVuLPa+nQhPEo+VsV9EqDxAINNajBLf4W73sDJaiviqFjypobfzVCP9JmOvUFjaYaRzMq5guYhczGyrc2zMeAG5nO8p6TwRjwj0uFwrOFNLCMwYgK9QsVJYgCx7iHW3AzZgejq9SweoKKNksFVVzBw7aBLDRUZtfKMx/T9FDTd3SpVSpTb9gamRUTxDvtkNwLAAabzl4/rjUfIKaKgQvlvqcrq6LyAKo5A35yTyNlVCMfPwbcZg6VCmjZFeo4ptlqVdbvlYgUkFyutiWI30nP6x4oGu9NAipTZkQIqqABbMdN7kbziYrGtVYu7ZmNrmwGwCgWGmwAh0sI51IyLzbTTyXc/AQqW4tXwbcG13Y/ZRyfQjIPm4hipoPSLNREUpTv3rBmO7WOg8hfh+URUup1G+u294ZbIvhj6m/+se7GJaKNT09oJfyEnZ0tI6mDQUlGIdbtciihFwzroajA7oh4fWew1CtAPTmL/wDJrfzv+crA11qJ9HqkKLk0nbQI53VjwpvYA8FOVts17PQOJ/u1/wAyl/viNq9yLq9zo9AVsZiqjUxjKy5ab1CQXckILlVRTdmPACdTD9FY6pTapTx1U5aVaqqt2is3ZV6lHJYtdWbs72O17TjdHYLF0GdqdNL1KVSkSalPRai5WK2qCzAbH5TfgsV0jRpoiU6YCBQrdombu4j6Tqe01u+h01U285KXOxKfOzRsxvRGMpq9ukqjOhxOVL1BnXC5TUKtmIDZWuFO9jrMPQWHxuJpq/0+ojVKj0qKFqh7SolPOwLA2RbFQDrqdo/FdJdI1FqKaGHBqGv31dM6DEle2VCapADBQNiQOMy9D1MdhqYSnRpNld6lN3dC1J3Ts2ZLVANV4MCLgG0HgTx4HDDYoU+0q9JVUpilhKrN+0cgYpXKjKrXJUpbzvLOFxZ6RXo9OkqjNd1aoe0VUdFdmXKW7wsg1Bt3vKZ8W+OqUBhzQpABKKM4enndMOGFFWvUK93OdQoJ0vtFFcccW2M7Kn2jF2Iz08l6iNTaw7S+zm2u9oAL8o6idC9ICmlSrj6tNSMS1QFqjGkmFJDtYN3iSBYabjWOw3QGPqBivSVS107Jr1ctRalA4hHcg/slyqQSwNj8JnxHTHSbtepRouDnDIXTK6VKVOk6NarfKQitoQcxJvwgr0r0kMw7Gjkcrmp50yFFoNhxRK9rrTyMTYm+YA30mF39jndNtjMNSw9Q43EMa9NKgFqqIquivZahbK5GYAgbTif9w4z/AMqt/mP+c7PSeFxmIp0kfD0lNJEpq61FDslNQiB81YrsBqFGs5f/AG5if7sf5lH/AHxo15HjVbl9o2MWzEtiUBKsTdq6C5KN9qoupU7st13Cg8Wd0qcIhF1+kOCO6yt2FM6E5lJAqOLjQ91SeLDLxtYUPFHrA+YeFTzJa1z5aiDmFwoUjvAtc3OnwFha/vMlCsCAwAIYcb6H4ER7VSBYHmLGxIGxAa22+3/PvX9j5qMK2Zmru5ZadNSzsVVVG5ZhoPxnYHVDH3ylaam17Fmvbjss41Yuo7Sk7I6HMrKSrCwIJBHkTJh+sOOqHXG1hwuar7fCcWaU1Kkz0cKi47eOTv0+pWPNiBRs17d6pw32SZOkur+Lw9NqtREdENnamxYpfi6soNvMbTZR6H6SqUO3FfEMliVvVqAsq6FlXNtoePDaeVxmNrsClStUIOljVdlPqGYgiSWSa/uK9uLNqPcXBuDGK04eDxRQ5W8P3HmJ2EbiJ3YsqkjizYaNtGoec53TeE17ZNm8YHBufoZoV4xa/wCRHAx8sFONHLglLDkvx5PL1HPO3v8AhKw9F3NqaM55KpY+wvPS9qg8NKmDz7NCfcrEYnpFiLPU0+yW0+C7fKedLpmncmj149Qp7pM569EVfr5Kf8Ti/wAUS7D4iNGApL4qjOeSgIPc5iR8BM9XpBeBJ+Qie0d/Ctvn9/5RKxxfLbKamdH6Qq+BFT97j/MxLD3mKtj77d4/L+sOl0Y7m7EmaOwp097X95RRm+FSJvNG6u37bmShTd9Tp58PgJtxC9wDcrexO5BOo99feIfGFtKan1/rsImnVsdTfyGvziNxin5Z04nNyVukXmgkypLSVnfqJeVCyyZYGI2LlGNyyssArYq0vLDyyssAoBWVljMkrLMYDLKyxhWVlmoDAyyZfKHllWmoANpcu0lpgm/o2poV5aj0O/z++bS842GqZXUjnb4GdR3npYcvpr7Hkzxetv7j6NSza7bH0nOxNLsqhXhuvmp29tvhHM8Y1ZHAWoL22YbiadSVXv4EUXjlqStPk+qdE9dKIwScGSlkyb95VygDgPP1ny7HZTqBKoYakNqjr6OB8rTUuGpf3j388pPvaJDp2v59xpdVCPh/DOI2FPKHhhUByoub93hO4MJT/vG9l/KNp4Wmu1Q+yH/5lP07W8RP12J7ST+GcV69ZdDSt8Cfumatiq/2co/ht/qnp2wyEX7W4494L8lteYqleimwufIfjA8U69UqF/UYpP8A84Nv3RwOxrvuW97CaKPQrHxH9epmur0uB4VA+ZmOtjajbmw8zaRccMf3NsvCOeXCUUalwFKn4iL+5lVOkKaaIt/Wcp6g4sW8hoPf+kX2x4AD7/cxH1KjtFJDrpU/6kmzfXx1Rhqco9vlMZqDzY+e3tEFid5BOeWWUuTohGEVUVQ56pbQnTkNB7S6WnGJh04EVg7ZrAhgQaYhgRy5MsloYEu0NAbFhYS0ieE2UqQtDKjyh0kpZKdGHsJRpTU0W02lAU2xGWUVjGMAmKMCYJltBMBiiJREsyoAoEySXlXmCJLffGtWPM29YgmCXO0OvSciNlPEc4XbDnMGaEKh5QrKakbu285Yrfq0w9seQk7Zv0BD3gaTf28rtzyPtMJrNzMo1G5n3m75tCN5d+XvEuwHibMeQ/EzHCAk5ZZMpGkuBprnh3fTf33iiSZLS7RN2F2+QbS7QgssJCoB0sC0sLGKkeiRlAeOOxCpNCJaOWkIXZfGOolVCgVWMAlWhARjFgSWkAlmYzDR7RpaZCYQfhDZOUPIbmLZpGaLLQNmSKZpRaUzQCYjYaCLQS0EmCTAEImVBMkBiyZJRlTGM5aDaaTh5XYwOLZHtSEWl2jjSg5JtBu0wLSQssmWbSbRQEloWWVaDSDSVaXCyywsKiMolAQwssLCCR0iiiQJGqkFVjkBjpD7EWnHJTloDxEcgHOGhk0AqQ8scqSzThKGfJeUaY4R7LFsYANIU1+UExhMFlEAjiKMAmGyWgForAVeCxkJgGABCYN5CZRgMQypJJgEkkkgMVJJJMY2lYDJHPAMsOxJSUUjWgmagCSsq0MyGYFAFZMsuFAHSgMssJDWOWagUJFOMWnGzTQQE7QpXsCTpGZR5RyJfgZ1loKPqiLWVUDmeb2Mi4YmNXCnyjWg3jaUFTbAFKRhKzk8YDtvFaQym7ojN5RTMP0ITzM28mysZsZeCTEtKZzzilUxhMBhCMForMLZIthGyoookwTDeCZgFSSSTAZJUkowGLlSSTGP/9k="
+                class="d-block w-100"
+                alt="image"
+              />
+              <div class="carousel-caption d-sm-block">
+                <h5>First slide label</h5>
+                <p>
+                  Some representative placeholder content for the first slide.
+                </p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img
+                src="https://www.coolcarsinchina.com/wp-content/uploads/2018/05/lambo-sv-1-800x553.jpg"
+                class="d-block w-100"
+                alt="image"
+              />
+              <div class="carousel-caption d-sm-block">
+                <h5>Second slide label</h5>
+                <p>
+                  Some representative placeholder content for the second slide.
+                </p>
+              </div>
+            </div>
+            <div class="carousel-item active">
+              <img
+                src="https://thumbs.dreamstime.com/b/audi-quattro-concept-car-16567087.jpg"
+                class="d-block w-100"
+                alt="image"
+              />
+              <div class="carousel-caption d-sm-block">
+                <h5>Third slide label</h5>
+                <p>
+                  Some representative placeholder content for the third slide.
+                </p>
+              </div>
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+      <div class="container-fluid mt-3 px-0">
+        <div class="row g-3">
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card">
+              <div class="card-header">Card Header</div>
+              <img
+                src="https://pbs.twimg.com/profile_images/796236579878490114/ZWfmaXs9_400x400.jpg"
+                class="card-img-top"
+                alt="Logo"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <input class="input" type="text" placeholder="Sub Title" />
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+                <a href="#" class="btn-card">Go somewhere</a>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">An item</li>
+                <li class="list-group-item">A second item</li>
+              </ul>
+              <div class="card-body-link">
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+              </div>
+              <div class="card-footer bg-transparent border-secondary">
+                Footer
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card">
+              <div class="card-header">Card Header</div>
+              <img
+                src="https://pbs.twimg.com/profile_images/796236579878490114/ZWfmaXs9_400x400.jpg"
+                class="card-img-top"
+                alt="Logo"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <input class="input" type="text" placeholder="Sub Title" />
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+                <a href="#" class="btn-card">Go somewhere</a>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">An item</li>
+                <li class="list-group-item">A second item</li>
+              </ul>
+              <div class="card-body-link">
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+              </div>
+              <div class="card-footer bg-transparent border-secondary">
+                Footer
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card">
+              <div class="card-header">Card Header</div>
+              <img
+                src="https://pbs.twimg.com/profile_images/796236579878490114/ZWfmaXs9_400x400.jpg"
+                class="card-img-top"
+                alt="Logo"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <input class="input" type="text" placeholder="Sub Title" />
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+                <a href="#" class="btn-card">Go somewhere</a>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">An item</li>
+                <li class="list-group-item">A second item</li>
+              </ul>
+              <div class="card-body-link">
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+              </div>
+              <div class="card-footer bg-transparent border-secondary">
+                Footer
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion accordion-flush mt-3" id="accordionFlushExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingOne">
+            <button
+              class="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseOne"
+              aria-expanded="true"
+              aria-controls="flush-collapseOne"
+            >
+              Accordion Item 1
+            </button>
+          </h2>
+          <div
+            id="flush-collapseOne"
+            class="accordion-collapse collapse show"
+            aria-labelledby="flush-headingOne"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              Placeholder content for this accordion, which is intended to
+              demonstrate the <code>.accordion-flush</code> class. This is the
+              first item's accordion body.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingTwo">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseTwo"
+              aria-expanded="false"
+              aria-controls="flush-collapseTwo"
+            >
+              Accordion Item 2
+            </button>
+          </h2>
+          <div
+            id="flush-collapseTwo"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-headingTwo"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              Placeholder content for this accordion, which is intended to
+              demonstrate the <code>.accordion-flush</code> class. This is the
+              second item's accordion body.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingThree">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseThree"
+              aria-expanded="false"
+              aria-controls="flush-collapseThree"
+            >
+              Accordion Item 3
+            </button>
+          </h2>
+          <div
+            id="flush-collapseThree"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-headingThree"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              Placeholder content for this accordion, which is intended to
+              demonstrate the <code>.accordion-flush</code> class. This is the
+              third item's accordion body.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="table">
+        &gt;
+              <table class="table m-3 table-responsive">
+          <thead>
+            <tr>
+              <th scope="col">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+              </th>
+              <th scope="col">Title</th>
+              <th scope="col">Title</th>
+              <th scope="col">Title</th>
+              <th scope="col">Title</th>
+              <th scope="col">Title</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+              </th>
+              <td>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                  <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"></path>
+                </svg>
+              </td>
+              <td>Hi</td>
+              <td>There</td>
+              <td>Hello</td>
+              <td>
+                <a href="#">Publish</a>
+                <a href="#">Edit</a>
+                <a href="#">Delete</a>
+              </td>
+            </tr>
+            <tr></tr>
+            <tr>
+              <th scope="row">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+              </th>
+              <td>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                  <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"></path>
+                </svg>
+              </td>
+              <td>Hi</td>
+              <td>There</td>
+              <td>Hello</td>
+              <td>
+                <a href="#">Publish</a>
+                <a href="#">Edit</a>
+                <a href="#">Delete</a>
+              </td>
+            </tr>
+            <tr></tr>
+            <tr>
+              <th scope="row">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+              </th>
+              <td>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                  <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"></path>
+                </svg>
+              </td>
+              <td>Hi</td>
+              <td>There</td>
+              <td>Hello</td>
+              <td>
+                <a href="#">Publish</a>
+                <a href="#">Edit</a>
+                <a href="#">Delete</a>
+              </td>
+            </tr>
+            <tr></tr>
+            <tr>
+              <th scope="row">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+              </th>
+              <td>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                  <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"></path>
+                </svg>
+              </td>
+              <td>Hi</td>
+              <td>There</td>
+              <td>Hello</td>
+              <td>
+                <a href="#">Publish</a>
+                <a href="#">Edit</a>
+                <a href="#">Delete</a>
+              </td>
+            </tr>
+            <tr></tr>
+            <tr>
+              <th scope="row">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+              </th>
+              <td>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                  <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"></path>
+                </svg>
+              </td>
+              <td>Hi</td>
+              <td>There</td>
+              <td>Hello</td>
+              <td>
+                <a href="#">Publish</a>
+                <a href="#">Edit</a>
+                <a href="#">Delete</a>
+              </td>
+            </tr>
+            <tr></tr>
+            <tr>
+              <th scope="row">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+              </th>
+              <td>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                  <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"></path>
+                </svg>
+              </td>
+              <td>Hi</td>
+              <td>There</td>
+              <td>Hello</td><td>
+                <a href="#">Publish</a>
+                <a href="#">Edit</a>
+                <a href="#">Delete</a>
+              </td>
+            </tr>
+            <tr></tr>
+            <tr>
+              <th scope="row">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+              </th>
+              <td>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                  <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"></path>
+                </svg>
+              </td>
+              <td>Hi</td>
+              <td>There</td>
+              <td>Hello</td>
+              <td>
+                <a href="#">Publish</a>
+                <a href="#">Edit</a>
+                <a href="#">Delete</a>
+              </td>
+            </tr>
+            <tr></tr>
+            <tr>
+              <th scope="row">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+              </th>
+              <td>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                  <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"></path>
+                </svg>
+              </td>
+              <td>Hi</td>
+              <td>There</td>
+              <td>Hello</td>
+              <td>
+                <a href="#">Publish</a>
+                <a href="#">Edit</a>
+                <a href="#">Delete</a>
+              </td>
+            </tr>
+            <tr></tr>
+            <tr>
+              <th scope="row">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+              </th>
+              <td>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                  <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"></path>
+                </svg>
+              </td>
+              <td>Hi</td>
+              <td>There</td>
+              <td>Hello</td>
+              <td>
+                <a href="#">Publish</a>
+                <a href="#">Edit</a>
+                <a href="#">Delete</a>
+              </td>
+            </tr>
+            <tr></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Bootstrap Form</h3>
+      <form class="row-form g-3">
+        <div class="col fnln">
+        <div class="col -md-6 col-sm-12">
+          <input type="text" placeholder="First Name" class="form-control1" id="inputEmail4">
+        </div>
+        <div class="col -md-6 col-sm-12">
+           <input type="text" placeholder="Last Name" class="form-control1" id="inputPassword4">
+        </div>
+        </div>
+        <div class="col -12">
+          <input type="email" class="form-control1" id="inputAddress" placeholder="Email" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpiYmZkZTQxOS00ZGRkLWU5NDYtOWQ2MC05OGExNGJiMTA3N2YiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RDAyNDkwMkRDOTIyMTFFNkI0MzFGRTk2RjM1OTdENTciIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RDAyNDkwMkNDOTIyMTFFNkI0MzFGRTk2RjM1OTdENTciIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKFdpbmRvd3MpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6OTU2NTE1NDItMmIzOC1kZjRkLTk0N2UtN2NjOTlmMjQ5ZGFjIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOmJiZmRlNDE5LTRkZGQtZTk0Ni05ZDYwLTk4YTE0YmIxMDc3ZiIv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&quot;) !important; background-repeat: no-repeat; background-size: 20px; background-position: 97% center; cursor: auto;" data-temp-mail-org="0">
+        </div>
+        <div class="col -12">
+           <input type="text" class="form-control1" id="inputAddress2" placeholder="Password">
+        </div>
+        <div class="col -12">
+            <input type="text" class="form-control1" id="inputAddress2" placeholder="Confirm Password">
+         </div>
+        <div class="col -12">
+          <button type="submit" class="btn2 btn-primary">Submit Form</button>
+        </div>
+      </form>
+    </div>
+  </body>
 </html>
